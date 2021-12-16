@@ -13,7 +13,15 @@ class Libros extends Migration
      */
     public function up()
     {
-        //
+        // Construimos la tabla
+        Schema::create('libros', function (Blueprint $table) {
+            $table->engine="InnoDB";
+            $table->bigIncrements('id');
+            $table->bigInteger('categoria_id')->unsigned();
+            $table->string('nombre');
+            $table->timestamps();
+            $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete("cascade"); // Se crea la relación con la tabla categorias
+        });
     }
 
     /**
