@@ -16,11 +16,14 @@
                                 {{ __('Libro') }}
                             </span>
 
-                             <div class="float-right">
+                            <div class="float-right">
+                                <a href="{{ route('libros.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                  {{ __('PDF') }}
+                                </a>
                                 <a href="{{ route('libros.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
-                              </div>
+                            </div>
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
