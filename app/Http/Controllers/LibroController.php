@@ -24,6 +24,14 @@ class LibroController extends Controller
         return view('libro.index', compact('libros'))
             ->with('i', (request()->input('page', 1) - 1) * $libros->perPage());
     }
+    public function pdf()
+    {
+        $libros = Libro::paginate();
+
+        return view('libro.pdf', compact('libros'));
+
+        
+    }
 
     /**
      * Show the form for creating a new resource.

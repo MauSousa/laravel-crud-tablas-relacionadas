@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('libros/pdf', [App\Http\Controllers\LibroController::class, 'pdf'])->name('libros.pdf');
+
 Route::resource('libros', App\Http\Controllers\LibroController::class)->middleware('auth');
 Route::resource('categorias', App\Http\Controllers\CategoriaController::class)->middleware('auth');
 
