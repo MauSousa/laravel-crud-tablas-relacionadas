@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Libro;
 use App\Models\Categoria;
 use Illuminate\Http\Request;
-
+use PDF; 
 /**
  * Class LibroController
  * @package App\Http\Controllers
@@ -27,10 +27,11 @@ class LibroController extends Controller
     public function pdf()
     {
         $libros = Libro::paginate();
-
-        return view('libro.pdf', compact('libros'));
-
         
+        $pdf = PDF::loadView('libro.pdf',['libros'=>$libros]);
+        // ->set_base_path('public/css/app.css')
+        // $pdf->loadHTML('<h1>Test</h1>');
+        return $pdf->stream();
     }
 
     /**

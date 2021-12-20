@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Documento PDF</title>
+    <link rel="stylesheet" href="{{ public_path('css/app.css') }}" type="text/css">
+    <title>Reporte PDF</title>
 </head>
 <body>
     <h2>Lista de libros</h2>
-    <table class="table table-striped table-hover">
-        <thead class="thead">
+    <table class="">
+        {{-- table-striped table-hover --}}
+        <thead class="">
             <tr>
 				<th>Categoria</th>
 				<th>Nombre</th>
